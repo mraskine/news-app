@@ -1,0 +1,13 @@
+﻿using NewsApi.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace NewsApi.Models.GuardianApi
+{
+    public class SearchResponse
+    {
+        public List<GuardianStory> SearchResults { get; set; }
+    }
+}
