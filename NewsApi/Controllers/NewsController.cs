@@ -20,7 +20,21 @@ namespace NewsApi.Controllers
         {
             try
             {
-                var response = _guardianApiService.SearchStories(request.Page, request.PageSize);
+                var response = _guardianApiService.LatestStories(request.Page, request.PageSize);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return ReturnError(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SearchNews([FromBody] NewsListRequest request)
+        {
+            try
+            {
+                var response = _guardianApiService.SearchStories(request.Page, request.PageSize, request.Keyword);
                 return Ok(response);
             }
             catch (Exception ex)

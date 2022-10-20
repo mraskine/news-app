@@ -8,5 +8,6 @@ namespace NewsApi.Models.News
 
         [Required]
         public int? PageSize { get; set; }
+        public string Keyword { get; set; }
     }
 }
